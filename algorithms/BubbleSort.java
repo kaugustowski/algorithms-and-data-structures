@@ -1,17 +1,17 @@
 public class BubbleSort {
 
-    public void sort(int[] valuesToBeSorted){
-        BubbleSort.bubbleSort(valuesToBeSorted);
+    public void sort(int[] inputArray) {
+        BubbleSort.bubbleSort(inputArray);
     }
 
     //O(n^2) complexity
     private static void bubbleSort(int[] array) {
-        if (array==null)
+        if (array == null)
             return;
 
-        boolean isSorted=false;
+        boolean isSorted = false;
 
-        while (!isSorted){
+        while (!isSorted) {
             isSorted = true;
             for (int i=1; i<array.length; i++) {
                 if(array[i]<array[i-1]) {
