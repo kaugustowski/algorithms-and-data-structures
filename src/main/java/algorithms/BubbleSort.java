@@ -1,3 +1,5 @@
+package algorithms;
+
 public class BubbleSort {
 
     public void sort(int[] inputArray) {
@@ -13,10 +15,10 @@ public class BubbleSort {
 
         while (!isSorted) {
             isSorted = true;
-            for (int i=1; i<array.length; i++) {
-                if(array[i]<array[i-1]) {
-                swap(array, i-1, i);
-                isSorted = false;
+            for (int i = 1; i < array.length; i++) {
+                if (array[i] < array[i - 1]) {
+                    swap(array, i - 1, i);
+                    isSorted = false;
                 }
             }
         }
