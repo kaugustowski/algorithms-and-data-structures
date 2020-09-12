@@ -10,6 +10,11 @@ public class AVLTree<T extends Comparable<T>> implements Iterable<T> {
 
     private int nodeCount;
 
+    public Node getRootNode() {
+        return this.rootNode;
+    }
+
+
     public boolean insert(T elem) {
         if (elem == null)
             return false;
@@ -114,16 +119,14 @@ public class AVLTree<T extends Comparable<T>> implements Iterable<T> {
         return rotateLeft(node);
     }
 
-    //LR left rotation on right child then right rotation on node
     public Node balanceLeftRight(Node node) {
         node.leftChild = rotateLeft(node.leftChild);
-        return rotateLeft(node);
+        return rotateRight(node);
     }
 
-    //RL right rotation on left child then left rotation on node
     public Node balanceRightLeft(Node node) {
         node.rightChild = rotateRight(node.rightChild);
-        return rotateRight(node);
+        return rotateLeft(node);
     }
 
     public Node rotateLeft(Node node) {
@@ -196,6 +199,7 @@ public class AVLTree<T extends Comparable<T>> implements Iterable<T> {
     public Stream<Node> inOrderStream() {
         return rootNode.inOrder();
     }
+
 
     public class Node {
         //-2 -> left heavy
