@@ -11,6 +11,8 @@ public class AVLTree<T extends Comparable<T>> implements Iterable<T> {
     private int nodeCount;
 
     public boolean insert(T elem) {
+        if (elem == null)
+            return false;
         rootNode = insert(rootNode, elem);
         nodeCount++;
         return true;
