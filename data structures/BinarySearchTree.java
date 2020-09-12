@@ -17,7 +17,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public boolean add(T newElem) {
-
         rootNode = addNode(rootNode, newElem);
         return true;
     }
@@ -30,7 +29,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Iterable<T> {
         } else {
             if (elem.compareTo(node.data) < 0)
                 node.leftChild = addNode(node.leftChild, elem);
-            else
+            else if (elem.compareTo(node.data) > 0)
                 node.rightChild = addNode(node.rightChild, elem);
         }
 
