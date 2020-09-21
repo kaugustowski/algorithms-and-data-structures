@@ -19,6 +19,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public boolean add(T newElem) {
+        if (newElem == null)
+            return false;
         rootNode = addNode(rootNode, newElem);
         return true;
     }
@@ -92,13 +94,21 @@ public class BinarySearchTree<T extends Comparable<T>> implements Iterable<T> {
         return node;
     }
 
-    public Node findMin(Node node) {
+    public Node findMin() {
+        return findMin(rootNode);
+    }
+
+    private Node findMin(Node node) {
         while (node.leftChild != null)
             node = node.leftChild;
         return node;
     }
 
-    public Node findMax(Node node) {
+    public Node findMax() {
+        return findMax(rootNode);
+    }
+
+    private Node findMax(Node node) {
         while (node.rightChild != null)
             node = node.rightChild;
         return node;
